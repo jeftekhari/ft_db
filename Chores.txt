@@ -1,0 +1,5 @@
+### Chores List
+ - Go through b+ tree function and discuss what we want to use
+ - personalize the b+ tree function we decide on
+ - create framework for reading in data from files
+ - 
