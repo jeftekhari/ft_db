@@ -1,5 +1,15 @@
 ### Chores List
- - Go through b+ tree function and discuss what we want to use
+# - Read In
+  - If no file, create new
+# - Prasing
+  - Adding Data
+    - Removing Data
+  - Search Algorithm
+    - Displaying Data
+# - Write
+  - "Seek" Functions
+  - Write to file
+
  - create framework for reading in data from files
  - create framework for exporting to files
  - be able to add information while the database is running
