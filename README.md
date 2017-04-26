@@ -9,10 +9,7 @@
 # - Write
   - "Seek" Functions
   - Write to file
-
- - create framework for reading in data from files
- - create framework for exporting to files
- - be able to add information while the database is running
+#
  - create a cool ui
 
 ## Salim
