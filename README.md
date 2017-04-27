@@ -25,7 +25,7 @@
 
 
 ## Data Structure
-###IDN, Name, Gender, Fav Color
+### IDN, Name, Gender, Fav Color
 
 IDN = 4 digit number (0001, 2357)
 Name = 26 character string (25 for name 1 for null)
