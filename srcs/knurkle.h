@@ -7,8 +7,6 @@
 # include	<stdio.h>
 # include	<string.h>
 # include	<math.h>
-# include	<conio.h>
-# include	<iostream>
 
 /*
  *
@@ -16,11 +14,15 @@
  *
  *
  * ROOM FOR PROTOTYPES AND STRUCTS
- *
- *
- *
- *
- *
  * */
+
+typedef struct	s_database
+{
+	char	***db;
+	int		idn;
+	int		color;
+	char	*gender;
+	char	*name;
+}				t_database;
 
 # endif
