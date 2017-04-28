@@ -6,4 +6,6 @@ int main()
 
 	db = init_db();
 	readin(db);
-	
+	while(1)
+	{
+		

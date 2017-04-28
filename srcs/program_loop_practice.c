@@ -18,11 +18,9 @@
 
 int main()
 {
-	char *str;
-	t_database	*db;
+	char str[25];
+	t_db	db;
 
-	if (!(db = malloc(sizeof(t_database))))
-		return (-1);
 	while (1)
 	{
 		scanf("%s", str);
@@ -31,13 +29,17 @@ int main()
 			printf("So Long mutha fucka!\n");
 			break ;
 		}
-		printf("Enter IDN");
-		scanf("%i", db->idn);
-		printf("Enter Name");
-		scanf("%s", db->name);
-		printf("Enter fav color");
-		scanf("%i", db->color);
-		printf("Enter Gender");
-		scanf("%s", db->gender);
+		else
+		{
+			printf("Enter IDN\n");
+			scanf("%i", db.idn);
+			printf("%i\n", *db.idn);
+			printf("Enter Name\n");
+			scanf("%s", db.name);
+			printf("Enter fav color\n");
+			scanf("%i", db.color);
+			printf("Enter Gender\n");
+			scanf("%s", db.gender);
+		}
 	}
 }
