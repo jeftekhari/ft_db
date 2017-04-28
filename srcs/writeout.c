@@ -17,7 +17,7 @@
 //}
 //
 
-void	parser(FILE *fp, t_database db)
+void	parser(FILE *fp, t_db db)
 {
 	int		i = 0;
 	int		j = 0;
@@ -66,7 +66,7 @@ void	parser(FILE *fp, t_database db)
 	}
 }
 
-void	write(t_database db)
+void	db_write(t_db db)
 {
 	FILE *fp;
 	
@@ -78,6 +78,6 @@ void	write(t_database db)
 int main ()
 {
 	t_database db;
-	write(db);
+	db_write(db);
 	return (0);
 }

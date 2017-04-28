@@ -6,6 +6,11 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		6C6B5EF21EB2EB4200F45E1C /* writeout.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C6B5EF11EB2EB4200F45E1C /* writeout.c */; };
+		6C6B5EF41EB2EBC500F45E1C /* readin.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C6B5EF31EB2EBC500F45E1C /* readin.c */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		6C5B63B51EB04E6E00186579 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -20,6 +25,9 @@
 
 /* Begin PBXFileReference section */
 		6C5B63B71EB04E6E00186579 /* ft_db */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ft_db; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C6B5EF01EB2EB4200F45E1C /* knurkle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = knurkle.h; path = srcs/knurkle.h; sourceTree = "<group>"; };
+		6C6B5EF11EB2EB4200F45E1C /* writeout.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = writeout.c; path = srcs/writeout.c; sourceTree = "<group>"; };
+		6C6B5EF31EB2EBC500F45E1C /* readin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = readin.c; path = srcs/readin.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +60,9 @@
 		6C919BDA1EB0503D00BF30B6 /* srcs */ = {
 			isa = PBXGroup;
 			children = (
+				6C6B5EF01EB2EB4200F45E1C /* knurkle.h */,
+				6C6B5EF31EB2EBC500F45E1C /* readin.c */,
+				6C6B5EF11EB2EB4200F45E1C /* writeout.c */,
 			);
 			name = srcs;
 			sourceTree = "<group>";
@@ -113,6 +124,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C6B5EF41EB2EBC500F45E1C /* readin.c in Sources */,
+				6C6B5EF21EB2EB4200F45E1C /* writeout.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

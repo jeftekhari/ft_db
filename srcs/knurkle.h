@@ -23,6 +23,7 @@ typedef struct	s_database
 	int		color;
 	char	*gender;
 	char	*name;
-}				t_database;
+}				t_db;
 
+void            db_write(t_db);
 # endif
