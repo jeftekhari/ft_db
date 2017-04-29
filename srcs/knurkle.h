@@ -20,10 +20,10 @@
 typedef struct	s_database
 {
 	char	***db;
-	int		idn;
-	int		color;
-	char	*gender;
-	char	*name;
+	int	idn[25];
+	int	color[25];
+	char	gender[3];
+	char	name[26];
 }				t_db;
 
 void            db_write(t_db);
