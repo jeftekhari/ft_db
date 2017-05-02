@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   writeout.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jeftekha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/05/02 13:02:59 by jeftekha          #+#    #+#             */
+/*   Updated: 2017/05/02 14:11:30 by jeftekha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include	<stdio.h>
 #include	<stdlib.h>
 #include	<unistd.h>
@@ -17,7 +29,7 @@
 //}
 //
 
-void	parser(FILE *fp, t_db db)
+void	parser(FILE *fp, t_database db)
 {
 	int		i = 0;
 	int		j = 0;
@@ -30,7 +42,7 @@ void	parser(FILE *fp, t_db db)
 	{
 		while (db.db[i][j])
 		{
-			if (db.db[i][j] == db.idn)
+			if (ft_atoi(db.db[i][j]) == db.idn)
 			{
 				tmp = db.db[i][j][n];
 				fprintf(fp, "%i,", tmp);
@@ -40,8 +52,9 @@ void	parser(FILE *fp, t_db db)
 				str = malloc(sizeof(char*) * 26);
 				while (db.db[i][j][n])
 				{
-					str[n] = db.db[i][j][n++];
+					str[n] = db.db[i][j][n];
 					fprintf(fp, "%s,", str);
+					n++;
 				}
 			}
 			if (db.db[i][j] == db.gender)
@@ -49,11 +62,12 @@ void	parser(FILE *fp, t_db db)
 				str= malloc(sizeof(char*) * 3);
 				while (db.db[i][j][n])
 				{
-					str[n] = db.db[i][j][n++];
+					str[n] = db.db[i][j][n];
 					fprintf(fp, "%s,", str);
+					n++;
 				}
 			}
-			if (db.db[i][j] == db.color)
+			if (ft_atoi(db.db[i][j]) == db.color)
 			{
 				tmp = db.db[i][j][n];
 				fprintf(fp, "%i,", tmp);
@@ -66,18 +80,22 @@ void	parser(FILE *fp, t_db db)
 	}
 }
 
-void	db_write(t_db db)
+void	db_write(t_database db)
 {
 	FILE *fp;
 	
-	fp = fopen("knurkle. csv", "w");
+	fp = fopen("knurkle.csv", "w");
+	if (i need to realloc)
+		db = re_alloc(db);
 
 	parser(fp, db);
 }
 
 int main ()
 {
-	t_database db;
-	db_write(db);
+	t_database	*db;
+
+	db = init_alloc(db);
+	db_write(*db);
 	return (0);
 }

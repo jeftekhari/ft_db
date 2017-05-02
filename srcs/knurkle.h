@@ -20,11 +20,15 @@
 typedef struct	s_database
 {
 	char	***db;
-	int	idn[25];
-	int	color[25];
+	int		idn;
+	int		color;
 	char	gender[3];
 	char	name[26];
-}				t_db;
+}				t_database;
 
-void            db_write(t_db);
+void            db_write(t_database);
+void			parser(FILE *fp, t_database db);
+void			wrong(int error, t_database *db);
+t_database		*init_alloc(t_database *db);
+t_database		*re_alloc(t_database *db);
 # endif
