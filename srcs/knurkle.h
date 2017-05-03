@@ -24,6 +24,8 @@ typedef struct	s_database
 	char	color[11];
 	char	gender[3];
 	char	name[26];
+	int		table;
+	int		row;
 }				t_database;
 
 void            db_write(t_database db, int n, FILE *fp);
