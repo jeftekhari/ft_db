@@ -2,23 +2,21 @@
 
 
 /*Re-allocation of memory when a new entry is called */
-t_database	*re_alloc(t_database *db)
+t_database	re_alloc(t_database db)
 {
-	if (!(db->db = realloc(db->db, 15/*strlen(db->db + 1*/)))
+	if (!(db.db = realloc(db.db, 15/*strlen(db->db + 1*/)))
 		wrong(4, db);
 	return (db);
 }
 
 /* Initial Allocation of memory for the struct and the triple array */
-t_database	*init_alloc(t_database *db)
+t_database	init_alloc(t_database db)
 {
-	if (!(db = ft_memalloc(sizeof(t_database))))
+	if (!(db.db = ft_memalloc(sizeof(char*))))
 		wrong(1, db);
-	if (!(db->db = ft_memalloc(sizeof(char*))))
+	if (!(*db.db = ft_memalloc(sizeof(char**))))
 		wrong(1, db);
-	if (!(*db->db = ft_memalloc(sizeof(char**))))
-		wrong(1, db);
-	if (!(**db->db = ft_memalloc(sizeof(char***))))
+	if (!(**db.db = ft_memalloc(sizeof(char***))))
 		wrong(1, db);
 	return (db);
 }
@@ -30,7 +28,7 @@ int		shutdown(int reason, t_database db)
 	exit(reason);
 }
 
-void	wrong(int error, t_database *db)
+void	wrong(int error, t_database db)
 {
 	if (error == 0)
 		ft_putstr("Invalid # of Args.\n");
@@ -42,5 +40,5 @@ void	wrong(int error, t_database *db)
 		ft_putstr("Error Opening File");
 	if (error == 4)
 		ft_putstr("Bad Realloc");
-	shutdown(0, *db);
+	shutdown(0, db);
 }
