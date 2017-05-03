@@ -2,9 +2,9 @@
 
 
 /*Re-allocation of memory when a new entry is called */
-t_database	*re_alloc(t_database db)
+t_database	*re_alloc(t_database *db)
 {
-	if (!(db->db = realloc(sizeof(char*) + 1)))
+	if (!(db->db = realloc(db->db, 15/*strlen(db->db + 1*/)))
 		wrong(4, db);
 	return (db);
 }

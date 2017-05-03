@@ -6,7 +6,7 @@
 /*   By: jeftekha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/02 13:02:59 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/02 14:11:30 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/02 14:47:06 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,15 +80,15 @@ void	parser(FILE *fp, t_database db)
 	}
 }
 
-void	db_write(t_database db)
+void	db_write(t_database *db, int n)
 {
 	FILE *fp;
 	
 	fp = fopen("knurkle.csv", "w");
-	if (i need to realloc)
+	if (n == 1)
 		db = re_alloc(db);
 
-	parser(fp, db);
+	parser(fp, *db);
 }
 
 int main ()
@@ -96,6 +96,6 @@ int main ()
 	t_database	*db;
 
 	db = init_alloc(db);
-	db_write(*db);
+	db_write(db, 0);
 	return (0);
 }
