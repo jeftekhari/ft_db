@@ -1,5 +1,7 @@
 #include "knurkle.h"
-int store(t_db db)
+
+// I only commented some stuff out to test the main function. READ THE README IF YOU WANT TO KNOW MY THOUGHT PROCESS!//
+int store(t_database db)
 {
     int i = 0;
     int j = 0;
@@ -23,14 +25,11 @@ int store(t_db db)
     
     return (0);
 }
-int readin(t_db db)
+int readin(t_database db, FILE *fp)
 {
-   FILE    *fp;
-    
-    if (!(fp = fopen("knurkle.csv", "rb")))
-    {
-        printf("Error 52");
-        exit(0);
-    }
+   // if (!(fp = fopen("knurkle.csv", "rb")))
+//		db_write(db, 0);
+//	else
+	//	store(db);
     return (0);
 }
