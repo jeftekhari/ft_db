@@ -80,22 +80,21 @@ void	parser(FILE *fp, t_database db)
 	}
 }
 
-void	db_write(t_database db)
+void	db_write(t_database db, int n)
 {
 	FILE *fp;
 	
 	fp = fopen("knurkle.csv", "w");
-	if (i need to realloc)
+	if (n == 1)
 		db = re_alloc(db);
-
 	parser(fp, db);
 }
 
 int main ()
 {
-	t_database	*db;
+	t_database	db;
 
 	db = init_alloc(db);
-	db_write(*db);
+	db_write(db, 0);
 	return (0);
 }

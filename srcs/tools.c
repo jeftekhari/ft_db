@@ -2,7 +2,7 @@
 
 
 /*Re-allocation of memory when a new entry is called */
-t_database	*re_alloc(t_database db)
+t_database	*re_alloc(t_database *db)
 {
 	if (!(db->db = realloc(sizeof(char*) + 1)))
 		wrong(4, db);
@@ -10,7 +10,7 @@ t_database	*re_alloc(t_database db)
 }
 
 /* Initial Allocation of memory for the struct and the triple array */
-t_database	*init_alloc(t_database *db)
+t_database	*init_alloc(t_database db)
 {
 	if (!(db = ft_memalloc(sizeof(t_database))))
 		wrong(1, db);
