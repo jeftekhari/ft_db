@@ -15,12 +15,16 @@ t_database	init_alloc(t_database db)
 {
 	if (!(db.db = (char***)ft_memalloc(sizeof(char**) * 100)))
 		wrong(1, db);
-	if (!(*db.db = (char**)ft_memalloc(sizeof(char*) * 5)))
-		wrong(1, db);
-	if (!(**db.db = (char*)ft_memalloc(sizeof(char) * 30)))
-		wrong(1, db);
-	db.row = 0;
-	db.row++;
+	for (int i = 0; i < 100; i++)
+	{
+		if (!(db.db[i] = (char**)ft_memalloc(sizeof(char*) * 5)))
+			wrong(1, db);
+		for (int j = 0; j < 5; j++)
+		{
+			if (!(db.db[i][j] = (char*)ft_memalloc(sizeof(char) * 30)))
+				wrong(1, db);
+		}
+	}
 	return (db);
 }
 

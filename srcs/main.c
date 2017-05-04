@@ -8,6 +8,7 @@ int main()
 	int			n = 0;
 
 //	db = init_alloc(db);
+	db.table = 0;
 	while(1)
 	{
 //		readin(db, fp);
@@ -43,5 +44,6 @@ int main()
 		}
 		if (strstr("Y", str))
 			n = 1;
+		db.table++; // we need to put this in the correct position
 	}
 }

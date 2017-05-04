@@ -43,21 +43,17 @@ void	parser(FILE *fp, t_database db)
 	char	*str;
 
 
-	while (db.db[i])
+	while (db.db[i][j])
 	{
-		while (db.db[i][j])
-		{
-				fprintf(fp, "%s,", db.idn);
-				j++;
-				fprintf(fp, "%s,", db.name);
-				j++;
-				fprintf(fp, "%s,", db.gender);
-				j++;
-				fprintf(fp, "%s,", db.color);
-				j++;
-		}
-	j = 0;
-	i++;
+			fprintf(fp, "%s,", db.idn);
+			j++;
+			fprintf(fp, "%s,", db.name);
+			j++;
+			fprintf(fp, "%s,", db.gender);
+			j++;
+			fprintf(fp, "%s,", db.color);
+			j++;
+			db.db[i][j] = NULL;
 	}
 }
 
