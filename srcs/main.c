@@ -7,7 +7,7 @@ int main()
 	FILE		*fp = NULL;
 	int			n = 0;
 
-//	db = init_alloc(db);
+	db = init_alloc(db);
 	db.table = 0;
 	while(1)
 	{
@@ -42,7 +42,7 @@ int main()
 			printf("Bye!\n");
 			break ;
 		}
-		if (strstr("Y", str))
+		if (strstr("Y", str) || strstr("y", str)))
 			n = 1;
 		db.table++; // we need to put this in the correct position
 	}
