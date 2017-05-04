@@ -6,7 +6,7 @@
 /*   By: jeftekha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/02 13:02:59 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/03 19:29:54 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/04 12:10:16 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,6 @@ void	parser(FILE *fp, t_database db)
 {
 	int		i = 0;
 	int		j = 0;
-	int		n = 0;
-	char	*str;
-
 
 	while (db.db[i][j])
 	{

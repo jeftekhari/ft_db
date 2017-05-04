@@ -4,7 +4,7 @@ int main()
 {
 	t_database	db;
 	char		str[25];
-	FILE		*fp;
+	FILE		*fp = NULL;
 	int			n = 0;
 
 //	db = init_alloc(db);

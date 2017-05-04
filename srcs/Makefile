@@ -8,9 +8,7 @@ HEADERS = knurkle.h
 
 OBJECTS = main.o writeout.o tools.o
 
-GRAPHICS_FLAGS = -framework OpenGL -framework AppKit
-
-CFLAGS = -Wall -Werror -Wextra -g -fno-omit-frame-pointer -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra -g
 
 .PHONY:all clean fclean re information
 all: information $(NAME)
