@@ -31,7 +31,7 @@ typedef struct	s_database
 void            db_write(t_database db, int n, FILE *fp);
 void			parser(FILE *fp, t_database db);
 void			wrong(int error, t_database db);
-t_database		init_alloc(t_database db);
+t_database		init_alloc(void);
 void			store1(t_database db);
 //int				readin(t_database db, FILE *fp);
 //int				store(t_database db, FILE *fp);
