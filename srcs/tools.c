@@ -4,9 +4,9 @@
 /*Re-allocation of memory when a new entry is called */
 t_database	re_alloc(t_database db)
 {
-	if (!(db.db = realloc((void*)db.db, db.rows + 1)))
+	if (!(db.db = realloc((void*)db.db, db.row + 1)))
 		wrong(4, db);
-	db.rows++;
+	db.row++;
 	return (db);
 }
 
@@ -19,8 +19,8 @@ t_database	init_alloc(t_database db)
 		wrong(1, db);
 	if (!(**db.db = (char*)ft_memalloc(sizeof(char) * 30)))
 		wrong(1, db);
-	db.rows = 0;
-	db.rows++;
+	db.row = 0;
+	db.row++;
 	return (db);
 }
 
