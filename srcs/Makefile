@@ -6,7 +6,7 @@ NAME = ft_db
 
 HEADERS = knurkle.h
 
-OBJECTS = main.o includes/get_next_line/get_next_line.o draw.o draw1.o parsing.o tools.o hook.o bresenham.o
+OBJECTS = main.o writeout.o tools.o
 
 GRAPHICS_FLAGS = -framework OpenGL -framework AppKit
 
@@ -16,9 +16,8 @@ CFLAGS = -Wall -Werror -Wextra -g -fno-omit-frame-pointer -fsanitize=address
 all: information $(NAME)
 
 $(NAME): $(OBJECTS)
-	make -C ./includes/libft/
-	make -C ./minilibx_macos/
-	$(CC) $(CFLAGS) $(GRAPHICS_FLAGS) $(OBJECTS) -L. ./includes/libft/libft.a -lmlx -Lminilibx_macos -o $@
+	make -C ../libs/libft/
+	$(CC) $(CFLAGS) $(GRAPHICS_FLAGS) $(OBJECTS) -L. ../libs/libft/libft.a -o $@
 
 %.o: %.c $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
