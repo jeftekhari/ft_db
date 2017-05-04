@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   knurkle.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/05/04 15:59:59 by jeftekha          #+#    #+#             */
+/*   Updated: 2017/05/04 16:05:36 by jeftekha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef		KNURKLE_H
 # define		KNURKLE_H
 # include	<sys/types.h>
@@ -29,11 +41,11 @@ typedef struct	s_database
 }				t_database;
 
 void            db_write(t_database db, FILE *fp);
-void			parser(FILE *fp, t_database db);
+void			db_print(FILE *fp, t_database db);
 void			wrong(int error, t_database db);
 t_database		init_alloc(void);
-void			store1(t_database db);
+void			db_store(t_database db);
+t_database		info(t_database db);
 //int				readin(t_database db, FILE *fp);
-//int				store(t_database db, FILE *fp);
-t_database		re_alloc(t_database db);
+//int				db_store(t_database db, FILE *fp);
 # endif

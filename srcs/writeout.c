@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   writeout.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeftekha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/02 13:02:59 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/04 15:10:33 by jeftekha         ###   ########.fr       */
+/*   Created: 2017/05/04 16:00:28 by jeftekha          #+#    #+#             */
+/*   Updated: 2017/05/04 16:05:18 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,8 @@
 #include	<unistd.h>
 #include	"knurkle.h"
 
-void	store1( t_database db)
-{
-	int		j = 0;
-	
-	db.db[db.table][j++] = strdup(db.idn);
-	db.db[db.table][j++] = strdup(db.name);
-	db.db[db.table][j++] = strdup(db.color);
-	db.db[db.table][j++] = strdup(db.gender);
-}
-
-void	parser(FILE *fp, t_database db)
+/* Prints Entry to File */
+void	db_print(FILE *fp, t_database db)
 {
 	int		i = 0;
 	int		j = 0;
@@ -44,15 +35,13 @@ void	parser(FILE *fp, t_database db)
 	}
 }
 
+/* Gets, Stores and Prints Entry to File */
 void	db_write(t_database db, FILE *fp)
 {
-//	if (n == 0)
-//		db = init_alloc(db);
+	db = info(db);
 	if (!(fp = fopen("knurkle.csv", "w")))
 		wrong(3, db);
-//	if (n == 1)
 		fp = fopen("knurkle.csv", "a");
-//		db = re_alloc(db);
-	store1(db);
-	parser(fp, db);
+	db_store(db);
+	db_print(fp, db);
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/05/04 15:59:42 by jeftekha          #+#    #+#             */
+/*   Updated: 2017/05/04 16:05:46 by jeftekha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "knurkle.h"
 
 int main()
@@ -5,36 +17,24 @@ int main()
 	t_database	db;
 	char		str[25];
 	FILE		*fp = NULL;
-	int			n = 0;
 
 	db = init_alloc();
 	db.table = 0;
 	while(1)
 	{
-//		readin(db, fp);
-		printf("Hello! What can I do for you? (If done type 'exit')\n");
+		printf("Hello! What can I do for you? 'Read/Write/Search/Exit'\n");
 		scanf("%s", str);
-		if (strstr("exit", str))
+		if (strstr("exit", str) || strstr("Exit", str))
 		{
-			printf("so Long Mutha Fucka!\n");
+			printf("So Long Mutha Fucka!\n");
 			break ;
 		}
-		else
-		{
-			printf("Enter IDN:\n");
-			scanf("%s", db.idn);
-			printf("Enter Name:\n");
-			scanf("%s", db.name);
-			printf("Enter Favorite Color:\n");
-			scanf("%s", db.color);
-			printf("Enter Gender:\n");
-			scanf("%s", db.gender);
-		}
-//		parser(fp, db);
-		if (n == 1)
+		if (strstr("Write", str) || strstr("write", str))
 			db_write(db, fp);
-		else
-			db_write(db, fp);
+//		if (strstr("Read", str) || strstr("read", str))
+//			readin(db, fp);
+//		if (strstr("Search", str) || strstr("search", str))
+//			search(db, fp);
 		printf("Anything Else? (Y/N):\n");
 		scanf("%s", str);
 		if (strstr("N", str))
@@ -43,7 +43,6 @@ int main()
 			break ;
 		}
 		if (strstr("Y", str) || strstr("y", str))
-			n = 1;
-		db.table++; // we need to put this in the correct position
+			db.table++;
 	}
 }

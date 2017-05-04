@@ -1,13 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   tools.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/05/04 16:01:06 by jeftekha          #+#    #+#             */
+/*   Updated: 2017/05/04 16:02:53 by jeftekha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "knurkle.h"
 
 
-/*Re-allocation of memory when a new entry is called */
-t_database	re_alloc(t_database db)
+/* Used on entry creation. User enters in key information into struct variables */
+t_database	info(t_database db)
 {
-	if (!(db.db = realloc((void*)db.db, db.row + 1)))
-		wrong(4, db);
-	db.row++;
+	printf("Enter IDN:\n");
+	scanf("%s", db.idn);
+	printf("Enter Name:\n");
+	scanf("%s", db.name);
+	printf("Enter Favorite Color:\n");
+	scanf("%s", db.color);
+	printf("Enter Gender:\n");
+	scanf("%s", db.gender);
 	return (db);
+}
+
+/* Stores data into 3d array, use db.table to move throughout*/
+void	db_store( t_database db)
+{
+	int		j = 0;
+	
+	db.db[db.table][j++] = strdup(db.idn);
+	db.db[db.table][j++] = strdup(db.name);
+	db.db[db.table][j++] = strdup(db.color);
+	db.db[db.table][j++] = strdup(db.gender);
 }
 
 /* Initial Allocation of memory for the struct and the triple array */
