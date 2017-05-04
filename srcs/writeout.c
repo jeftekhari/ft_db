@@ -6,7 +6,7 @@
 /*   By: jeftekha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/02 13:02:59 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/04 12:10:16 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/04 15:10:33 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ void	parser(FILE *fp, t_database db)
 			j++;
 			fprintf(fp, "%s,", db.name);
 			j++;
-			fprintf(fp, "%s,", db.gender);
-			j++;
 			fprintf(fp, "%s,", db.color);
+			j++;
+			fprintf(fp, "%s,", db.gender);
 			j++;
 			db.db[i][j] = NULL;
 	}
