@@ -6,7 +6,7 @@
 /*   By: jeftekha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/02 13:02:59 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/03 17:08:14 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/03 19:23:38 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,6 @@
 #include	<unistd.h>
 #include	"knurkle.h"
 
-
-//int main()
-//{
-//	FILE *fp;
-//	fp = fopen("hello.csv", "w");
-//
-//	fprintf(fp, "This is a test\n");
-///////
-//	fclose(fp);
-//
-//	return (0);
-//}
-//
 void	store1( t_database db)
 {
 	int		i = 0;
@@ -60,15 +47,14 @@ void	parser(FILE *fp, t_database db)
 	{
 		while (db.db[i][j])
 		{
-			if (ft_atoi(db.db[i][j]) == ft_atoi(db.idn))
 				fprintf(fp, "%s,", db.idn);
-			if (db.db[i][j] == db.name)
+				j++;
 				fprintf(fp, "%s,", db.name);
-			if (db.db[i][j] == db.gender)
+				j++;
 				fprintf(fp, "%s,", db.gender);
-			if (ft_atoi(db.db[i][j]) == ft_atoi(db.color))
+				j++;
 				fprintf(fp, "%s,", db.color);
-			j++;
+				j++;
 		}
 	j = 0;
 	i++;
@@ -81,19 +67,8 @@ void	db_write(t_database db, int n, FILE *fp)
 		db = init_alloc(db);
 	if (!(fp = fopen("knurkle.csv", "w")))
 		wrong(3, db);
-	if (n == 1)
-		db = re_alloc(db);
+//	if (n == 1)
+//		db = re_alloc(db);
 	store1(db);
 	parser(fp, db);
 }
-
-/*int main ()
-{
-	t_database	db;
-
-	
-	db = init_alloc(db);
-	db_write(db, 0);
-	return (0);
-}
-*/

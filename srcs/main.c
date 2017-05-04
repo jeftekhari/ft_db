@@ -44,5 +44,4 @@ int main()
 		if (strstr("Y", str))
 			n = 1;
 	}
-	fclose(fp);
 }
