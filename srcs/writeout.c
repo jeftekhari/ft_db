@@ -17,22 +17,12 @@
 
 void	store1( t_database db)
 {
-	int		i = 0;
 	int		j = 0;
-	char	**table;
-
-	while(db.db[i])
-	{
-		table = db.db[i];
-		while(table[j])
-		{
-			table[j++] = strdup(db.idn);
-			table[j++] = strdup(db.name);
-			table[j++] = strdup(db.color);
-			table[j++] = strdup(db.gender);
-		}
-		i++;
-	}
+	
+	db.db[db.table][j++] = strdup(db.idn);
+	db.db[db.table][j++] = strdup(db.name);
+	db.db[db.table][j++] = strdup(db.color);
+	db.db[db.table][j++] = strdup(db.gender);
 }
 
 void	parser(FILE *fp, t_database db)
@@ -56,8 +46,8 @@ void	parser(FILE *fp, t_database db)
 
 void	db_write(t_database db, int n, FILE *fp)
 {
-	if (n == 0)
-		db = init_alloc(db);
+//	if (n == 0)
+//		db = init_alloc(db);
 	if (!(fp = fopen("knurkle.csv", "w")))
 		wrong(3, db);
 //	if (n == 1)
