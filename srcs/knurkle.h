@@ -28,7 +28,7 @@ typedef struct	s_database
 	int		row;
 }				t_database;
 
-void            db_write(t_database db, int n, FILE *fp);
+void            db_write(t_database db, FILE *fp);
 void			parser(FILE *fp, t_database db);
 void			wrong(int error, t_database db);
 t_database		init_alloc(void);

@@ -44,7 +44,7 @@ void	parser(FILE *fp, t_database db)
 	}
 }
 
-void	db_write(t_database db, int n, FILE *fp)
+void	db_write(t_database db, FILE *fp)
 {
 //	if (n == 0)
 //		db = init_alloc(db);

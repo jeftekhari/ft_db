@@ -11,8 +11,10 @@ t_database	re_alloc(t_database db)
 }
 
 /* Initial Allocation of memory for the struct and the triple array */
-t_database	init_alloc(t_database db)
+t_database	init_alloc(void)
 {
+	t_database	db;
+
 	if (!(db.db = (char***)ft_memalloc(sizeof(char**) * 100)))
 		wrong(1, db);
 	for (int i = 0; i < 100; i++)

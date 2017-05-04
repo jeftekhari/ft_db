@@ -7,7 +7,7 @@ int main()
 	FILE		*fp = NULL;
 	int			n = 0;
 
-	db = init_alloc(db);
+	db = init_alloc();
 	db.table = 0;
 	while(1)
 	{
@@ -32,9 +32,9 @@ int main()
 		}
 //		parser(fp, db);
 		if (n == 1)
-			db_write(db, 1, fp);
+			db_write(db, fp);
 		else
-			db_write(db, 0, fp);
+			db_write(db, fp);
 		printf("Anything Else? (Y/N):\n");
 		scanf("%s", str);
 		if (strstr("N", str))
@@ -42,7 +42,7 @@ int main()
 			printf("Bye!\n");
 			break ;
 		}
-		if (strstr("Y", str) || strstr("y", str)))
+		if (strstr("Y", str) || strstr("y", str))
 			n = 1;
 		db.table++; // we need to put this in the correct position
 	}
