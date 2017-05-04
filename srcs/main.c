@@ -5,11 +5,12 @@ int main()
 	t_database	db;
 	char		str[25];
 	FILE		*fp;
+	int			n = 0;
 
-	readin(db, fp);
-	db = init_alloc(db);
+//	db = init_alloc(db);
 	while(1)
 	{
+//		readin(db, fp);
 		printf("Hello! What can I do for you? (If done type 'exit')\n");
 		scanf("%s", str);
 		if (strstr("exit", str))
@@ -28,17 +29,20 @@ int main()
 			printf("Enter Gender:\n");
 			scanf("%s", db.gender);
 		}
-		parser(fp, db);
+//		parser(fp, db);
+		if (n == 1)
+			db_write(db, 1, fp);
+		else
+			db_write(db, 0, fp);
 		printf("Anything Else? (Y/N):\n");
+		scanf("%s", str);
 		if (strstr("N", str))
 		{
 			printf("Bye!\n");
 			break ;
 		}
 		if (strstr("Y", str))
-		{
-			re_alloc(db);
-			parser(fp, db);
-		}
+			n = 1;
 	}
+	fclose(fp);
 }
