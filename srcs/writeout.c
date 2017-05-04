@@ -6,7 +6,7 @@
 /*   By: jeftekha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/02 13:02:59 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/03 19:23:38 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/03 19:28:43 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,3 +72,5 @@ void	db_write(t_database db, int n, FILE *fp)
 	store1(db);
 	parser(fp, db);
 }
+
+//hello
