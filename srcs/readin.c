@@ -1,43 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   readin.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/05/04 16:50:28 by jeftekha          #+#    #+#             */
+/*   Updated: 2017/05/04 16:52:31 by jeftekha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "knurkle.h"
 
-// I only commented some stuff out to test the main function. READ THE README IF YOU WANT TO KNOW MY THOUGHT PROCESS!//
-int store(t_database db)
-{
-    int i = 0;
-    int j = 0;
-    int k = 0;
-
-    while (db.db[i])
-    {
-      j = 0;
-      while (db.db[i][j])
-      {
-          k = 0;
-          while (db.db[i][j][k])
-          {
-			
-              //add data
-			k++;
-          }
-          j++;
-      } 
-      i++;
-    }
-    
-    return (0);
-}
 int readin(t_database db, FILE *fp)
 {
 	char	*line;
 
+	if (!(line = (char*)ft_memalloc(sizeof(char))))
+		wrong(1, db);
 	if (!(fp = fopen("knurkle.csv", "rb")))
-		printf("File error");
+		wrong(3, db);
 	db.row = 0;
-	while (getdelim(&line , 100000, ';', fp))
-	{
-		db.row++;
-	}
-	else
-		store(db);
+	while (getdelim(&line , (size_t*)100000, ',', fp) && db.row <= 3)
+		db.db[db.table][db.row++] = strdup(line);
     return (0);
 }

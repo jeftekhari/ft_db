@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 15:59:59 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/04 16:05:36 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/04 16:46:55 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ void			wrong(int error, t_database db);
 t_database		init_alloc(void);
 void			db_store(t_database db);
 t_database		info(t_database db);
-//int				readin(t_database db, FILE *fp);
+int				readin(t_database db, FILE *fp);
 //int				db_store(t_database db, FILE *fp);
 # endif
