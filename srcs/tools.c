@@ -4,20 +4,23 @@
 /*Re-allocation of memory when a new entry is called */
 t_database	re_alloc(t_database db)
 {
-	if (!(db.db = realloc(db.db, 15/*strlen(db->db + 1*/)))
+	if (!(db.db = realloc((void*)db.db, db.rows + 1)))
 		wrong(4, db);
+	db.rows++;
 	return (db);
 }
 
 /* Initial Allocation of memory for the struct and the triple array */
 t_database	init_alloc(t_database db)
 {
-	if (!(db.db = ft_memalloc(sizeof(char*))))
+	if (!(db.db = (char***)ft_memalloc(sizeof(char**) * 100)))
 		wrong(1, db);
-	if (!(*db.db = ft_memalloc(sizeof(char**))))
+	if (!(*db.db = (char**)ft_memalloc(sizeof(char*) * 5)))
 		wrong(1, db);
-	if (!(**db.db = ft_memalloc(sizeof(char***))))
+	if (!(**db.db = (char*)ft_memalloc(sizeof(char) * 30)))
 		wrong(1, db);
+	db.rows = 0;
+	db.rows++;
 	return (db);
 }
 

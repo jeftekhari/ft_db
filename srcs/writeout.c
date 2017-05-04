@@ -6,7 +6,7 @@
 /*   By: jeftekha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/02 13:02:59 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/02 23:38:56 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/03 17:08:14 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,28 @@
 //	return (0);
 //}
 //
+void	store1(FILE *fp, t_database db)
+{
+	int		i = 0;
+	int		j = 0;
+	int		k = 0;
+
+	while(db.db[i])
+	{
+		while(db.db[i][j])
+		{
+			db.db[i][j] = strdup(db.idn);
+			db.db[i][j++];
+			db.db[i][j] = strdup(db.name);
+			db.db[i][j++];
+			db.db[i][j] = strdup(db.color);
+			db.db[i][j++];
+			db.db[i][j] = strdup(db.gender);
+			db.db[i][j++];
+		}
+		db.db[i++];
+	}
+}
 
 void	parser(FILE *fp, t_database db)
 {
@@ -35,7 +57,6 @@ void	parser(FILE *fp, t_database db)
 	int		j = 0;
 	int		n = 0;
 	char	*str;
-	int		tmp;
 
 
 	while (db.db[i])
@@ -43,37 +64,14 @@ void	parser(FILE *fp, t_database db)
 		while (db.db[i][j])
 		{
 			if (ft_atoi(db.db[i][j]) == ft_atoi(db.idn))
-			{
-				tmp = db.db[i][j][n];
-				fprintf(fp, "%i,", tmp);
-			}
+				fprintf(fp, "%s,", db.idn);
 			if (db.db[i][j] == db.name)
-			{
-				str = malloc(sizeof(char*) * 26);
-				while (db.db[i][j][n])
-				{
-					str[n] = db.db[i][j][n];
-					fprintf(fp, "%s,", str);
-					n++;
-				}
-			}
+				fprintf(fp, "%s,", db.name);
 			if (db.db[i][j] == db.gender)
-			{
-				str= malloc(sizeof(char*) * 3);
-				while (db.db[i][j][n])
-				{
-					str[n] = db.db[i][j][n];
-					fprintf(fp, "%s,", str);
-					n++;
-				}
-			}
+				fprintf(fp, "%s,", db.gender);
 			if (ft_atoi(db.db[i][j]) == ft_atoi(db.color))
-			{
-				tmp = db.db[i][j][n];
-				fprintf(fp, "%i,", tmp);
-			}
-		n = 0;
-		j++;
+				fprintf(fp, "%s,", db.color);
+			j++;
 		}
 	j = 0;
 	i++;
@@ -82,11 +80,13 @@ void	parser(FILE *fp, t_database db)
 
 void	db_write(t_database db, int n, FILE *fp)
 {
-	db = init_alloc(db);
+	if (n == 0)
+		db = init_alloc(db);
 	if (!(fp = fopen("knurkle.csv", "w")))
 		wrong(3, db);
 	if (n == 1)
 		db = re_alloc(db);
+	store1(fp, db);
 	parser(fp, db);
 }
 
