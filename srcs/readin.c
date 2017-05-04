@@ -15,8 +15,9 @@ int store(t_database db)
           k = 0;
           while (db.db[i][j][k])
           {
+			
               //add data
-              //k++;
+			k++;
           }
           j++;
       } 
@@ -27,9 +28,16 @@ int store(t_database db)
 }
 int readin(t_database db, FILE *fp)
 {
-   // if (!(fp = fopen("knurkle.csv", "rb")))
-//		db_write(db, 0);
-//	else
-	//	store(db);
+	char	*line;
+
+	if (!(fp = fopen("knurkle.csv", "rb")))
+		printf("File error");
+	db.row = 0;
+	while (getdelim(&line , 100000, ';', fp))
+	{
+		db.row++;
+	}
+	else
+		store(db);
     return (0);
 }
