@@ -61,6 +61,7 @@ void	db_write(t_database db, int n, FILE *fp)
 	if (!(fp = fopen("knurkle.csv", "w")))
 		wrong(3, db);
 //	if (n == 1)
+		fp = fopen("knurkle.csv", "a");
 //		db = re_alloc(db);
 	store1(db);
 	parser(fp, db);
