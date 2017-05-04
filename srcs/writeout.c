@@ -28,26 +28,23 @@
 //	return (0);
 //}
 //
-void	store1(FILE *fp, t_database db)
+void	store1( t_database db)
 {
 	int		i = 0;
 	int		j = 0;
-	int		k = 0;
+	char	**table;
 
 	while(db.db[i])
 	{
-		while(db.db[i][j])
+		table = db.db[i];
+		while(table[j])
 		{
-			db.db[i][j] = strdup(db.idn);
-			db.db[i][j++];
-			db.db[i][j] = strdup(db.name);
-			db.db[i][j++];
-			db.db[i][j] = strdup(db.color);
-			db.db[i][j++];
-			db.db[i][j] = strdup(db.gender);
-			db.db[i][j++];
+			table[j++] = strdup(db.idn);
+			table[j++] = strdup(db.name);
+			table[j++] = strdup(db.color);
+			table[j++] = strdup(db.gender);
 		}
-		db.db[i++];
+		i++;
 	}
 }
 
@@ -86,7 +83,7 @@ void	db_write(t_database db, int n, FILE *fp)
 		wrong(3, db);
 	if (n == 1)
 		db = re_alloc(db);
-	store1(fp, db);
+	store1(db);
 	parser(fp, db);
 }
 
