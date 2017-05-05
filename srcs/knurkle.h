@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 15:59:59 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/04 19:47:28 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/04 20:17:34 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct	s_database
 	int		table;
 	int		row;
 	int		type;
+	int		rflag;
 }				t_database;
 
 void            db_write(t_database db, FILE *fp);

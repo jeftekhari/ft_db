@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 16:01:06 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/04 20:12:37 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/04 20:21:04 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,8 @@ t_database	init_alloc(void)
 				wrong(1, db);
 		}
 	}
+	db.table = 0;
+	db.rflag = 0;
 	return (db);
 }
 
@@ -117,8 +119,10 @@ void	wrong(int error, t_database db)
 	if (error == 2)
 		ft_putstr("Bad File.\n");
 	if (error == 3)
-		ft_putstr("Error Opening File");
+		ft_putstr("Error Opening File\n");
 	if (error == 4)
-		ft_putstr("Bad Realloc");
+		ft_putstr("Bad Realloc\n");
+	if (error == 5)
+		ft_putstr("No data stored, please read in file.\n");
 	shutdown(0, db);
 }
