@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 16:50:28 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/05 14:17:11 by ssalaues         ###   ########.fr       */
+/*   Updated: 2017/05/05 14:18:33 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	***db_rewrite(t_database db, FILE *fp, int i)
 	char	***db1;
 	int		j;
 
-	db1 = init_alloc();
+	db1 = init_alloc(db);
 //	ft_memdel(db.db[i]);
 	if (!(fp = fopen("knurkle.csv", "w")))
 		wrong(3, db);
