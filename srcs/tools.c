@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 16:01:06 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/04 19:56:42 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/04 20:12:37 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,33 +18,33 @@ char	*search_ask(t_database db)
 	char str[25];
 
 	db.type = 0;
-	printf("How do you want to search?\n(IDN, Name, Color, Gender)");
+	printf("How do you want to search?\n(IDN, Name, Color, Gender)\n");
 	scanf("%s", str);
 	if (strstr("IDN", str) || strstr("Idn", str) || strstr("idn", str))
 	{
 		db.type = 1;
-		printf("Enter IDN");
+		printf("Enter IDN:\n");
 		scanf("%s", str);
 		return(strdup(str));
 	}
 	 if (strstr("NAME", str) || strstr("Name", str) || strstr("name", str))
 	 {
 		db.type = 2;
-		printf("Enter Name");
+		printf("Enter Name:\n");
 		scanf("%s", str);
 		return(strdup(str));
 	 }
 	if (strstr("COLOR", str) || strstr("Color", str) || strstr("color", str))
 	{
 		db.type = 3;
-		printf("Enter Color");
+		printf("Enter Color:\n");
 		scanf("%s", str);
 		return(strdup(str));
 	}
 	if (strstr("GENDER", str) || strstr("Gender", str) || strstr("gender", str))
 	{
 		db.type = 4;
-		printf("Enter Gender");
+		printf("Enter Gender:\n");
 		scanf("%s", str);
 		return(strdup(str));
 	}
