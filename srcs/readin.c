@@ -6,11 +6,50 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 16:50:28 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/05 11:34:45 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/05 13:48:49 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "knurkle.h"
+
+char	***db_rewrite(t_database db, FILE *fp, int i)
+{
+	char	***db1;
+	int		j = 0;
+
+	db1 = init_alloc();
+	memdel(db.db[i]);
+	if (!(fp = fopen("knurkle.csv", "w")))
+		wrong(3, db);
+	i = 0;
+	while (db.db[i])
+	{
+		db1[i] = db.db[i]
+		while(db.db[i][j])
+			db1[i][j] = db.db[i][j++];
+		j = 0;
+
+	
+
+t_database	db_delete(t_database, FILE *fp)
+{
+	char	*s;
+	char	str[25];
+	int		i = 0;
+
+	s = search_ask(&db);
+	printf("Are you sure you want to Delete?\n");
+	printf("This action %s CANNOT %s be undone", KRED, RESET);
+	printf("Y/N");
+	scanf("%s", str);
+	if (strstr("Y", str))
+	{
+		while (db.db[i])
+		{
+			if (strstr(db.db[i][db.type], s))
+				db.db = db_rewrite(db, fp, i);
+			i++;
+}
 
 t_database	readin(t_database db, FILE *fp)
 {
@@ -34,6 +73,7 @@ t_database	readin(t_database db, FILE *fp)
 		db.table++;
 	}
 	db.rflag = 1;
+	db.table++;
 	printf(KGRN "Complete!\n" RESET);
     return (db);
 }

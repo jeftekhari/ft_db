@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 15:59:42 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/05 12:20:10 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/05 12:44:41 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ t_database	loop(t_database db)
 		printf("Bye!\n");
 		exit(0);
 	}
-	if (strstr("Y", str) || strstr("y", str))
-		db.table++;
+//	if (strstr("Y", str) || strstr("y", str))
+//		db.table++;
 	return (db);
 }
 
@@ -32,10 +32,10 @@ t_database	format(t_database db, FILE *fp)
 {
 	char		str[25];
 
-	for (int i = 0; i < 50; i++)
+	for (int i = 0; i < 25; i++)
 		printf("\n");
 	printf(BOLDWHITE "Hello! What can I do for you? 'Read/Write/Search/Exit'\n" RESET);
-	for (int i = 0; i < 50; i++)
+	for (int i = 0; i < 25; i++)
 		printf("\n");
 	scanf("%s", str);
 	if (strstr("exit", str) || strstr("Exit", str))
