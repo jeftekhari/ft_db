@@ -28,6 +28,7 @@
  *
  * ROOM FOR PROTOTYPES AND STRUCTS
  * */
+#define RESET   "\033[0m"
 #define KNRM  "\x1B[0m"
 #define KRED  "\x1B[31m"
 #define KGRN  "\x1B[32m"
@@ -36,6 +37,10 @@
 #define KMAG  "\x1B[35m"
 #define KCYN  "\x1B[36m"
 #define KWHT  "\x1B[37m"
+#define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
+#define BOLDRED     "\033[1m\033[31m"      /* Bold Red */
+#define BOLDGREEN   "\033[1m\033[32m"      /* Bold Green */
+#define BOLDWHITE   "\033[1m\033[37m"      /* Bold White */
 
 typedef struct	s_database
 {
@@ -57,7 +62,7 @@ t_database		init_alloc(void);
 void			db_store(t_database db);
 t_database		info(t_database db);
 t_database		readin(t_database db, FILE *fp);
-char			*search_ask(t_database db);
+char			*search_ask(t_database *db);
 int				search(t_database db);
 //int				db_store(t_database db, FILE *fp);
 # endif

@@ -13,37 +13,37 @@
 #include "knurkle.h"
 
 
-char	*search_ask(t_database db)
+char	*search_ask(t_database *db)
 {
 	char str[25];
 
-	db.type = 0;
+	db->type = 0;
 	printf("How do you want to search?\n(IDN, Name, Color, Gender)\n");
 	scanf("%s", str);
 	if (strstr("IDN", str) || strstr("Idn", str) || strstr("idn", str))
 	{
-		db.type = 1;
+		db->type = 0;
 		printf("Enter IDN:\n");
 		scanf("%s", str);
 		return(strdup(str));
 	}
 	 if (strstr("NAME", str) || strstr("Name", str) || strstr("name", str))
 	 {
-		db.type = 2;
+		db->type = 1;
 		printf("Enter Name:\n");
 		scanf("%s", str);
 		return(strdup(str));
 	 }
 	if (strstr("COLOR", str) || strstr("Color", str) || strstr("color", str))
 	{
-		db.type = 3;
+		db->type = 2;
 		printf("Enter Color:\n");
 		scanf("%s", str);
 		return(strdup(str));
 	}
 	if (strstr("GENDER", str) || strstr("Gender", str) || strstr("gender", str))
 	{
-		db.type = 4;
+		db->type = 3;
 		printf("Enter Gender:\n");
 		scanf("%s", str);
 		return(strdup(str));

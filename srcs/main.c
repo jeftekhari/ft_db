@@ -39,7 +39,7 @@ int main()
 			else
 				wrong(5, db);
 		}
-		printf("Anything Else? (Y/N):\n");
+		printf("\nAnything Else? (Y/N):\n");
 		scanf("%s", str);
 		if (strstr("N", str))
 		{
