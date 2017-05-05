@@ -6,13 +6,13 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 16:50:28 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/04 20:36:43 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/04 20:39:45 by ssalaues         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "knurkle.h"
 
-int readin(t_database db, FILE *fp)
+t_database	readin(t_database db, FILE *fp)
 {
 	char	*line;
 	int		b = 1;
@@ -35,5 +35,5 @@ int readin(t_database db, FILE *fp)
 	}
 	db.rflag = 1;
 	printf("%s Complete!\n%s", KGRN, KWHT);
-    return (0);
+    return (db);
 }

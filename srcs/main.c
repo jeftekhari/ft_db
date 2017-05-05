@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 15:59:42 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/04 20:21:52 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/04 20:40:38 by ssalaues         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main()
 		if (strstr("Write", str) || strstr("write", str))
 			db_write(db, fp);
 		if (strstr("Read", str) || strstr("read", str))
-			readin(db, fp);
+			db = readin(db, fp);
 		if (strstr("Search", str) || strstr("search", str))
 		{
 			if (db.rflag == 1)
