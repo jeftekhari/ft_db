@@ -1,12 +1,8 @@
 ### Chores List
-  - Create a boolean for "Search" that requires the user to load a database "knurkle.csv"
-  - Search Algorithm
-    - Displaying Data
-    - UI
  - Error Handling!
-  - Error Handling for "How do you want to search?"
-    - currently if I type "j" it segfaults
+ 
   - Create Delete Function
     - Use Search Function and then memdel table
   - Create Update Function
-    - Use Search Function and then replace information
+    - USE EXACT SAME FORMAT AS DELETE, but after you delete the information, call *write* again to fill that information in in the correct spot.
+    Use Search Function and then replace information
