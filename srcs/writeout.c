@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 16:00:28 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/04 19:17:44 by ssalaues         ###   ########.fr       */
+/*   Updated: 2017/05/04 19:42:09 by ssalaues         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include	"knurkle.h"
 
 /* Prints Entry to File */
-int	db_print(FILE *fp, t_database db)
+void	db_save(FILE *fp, t_database db)
 {
 	int		i = 0;
 	int		j = 0;
@@ -33,7 +33,6 @@ int	db_print(FILE *fp, t_database db)
 			j++;
 			db.db[i][j] = NULL;
 	}
-	return (0);
 }
 
 /* Gets, Stores and Prints Entry to File */
@@ -44,5 +43,5 @@ void	db_write(t_database db, FILE *fp)
 		wrong(3, db);
 		fp = fopen("knurkle.csv", "a");
 	db_store(db);
-	db_print(fp, db);
+	db_save(fp, db);
 }
