@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 16:01:06 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/05 11:28:43 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/05 14:12:22 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,24 +84,22 @@ void	db_store( t_database db)
 }
 
 /* Initial Allocation of memory for the struct and the triple array */
-t_database	init_alloc(void)
+char	***init_alloc(t_database db1)
 {
-	t_database	db;
+	char	***db;
 
-	if (!(db.db = (char***)ft_memalloc(sizeof(char**) * 100)))
-		wrong(1, db);
+	if (!(db = (char***)ft_memalloc(sizeof(char**) * 100)))
+		wrong(1, db1);
 	for (int i = 0; i < 100; i++)
 	{
-		if (!(db.db[i] = (char**)ft_memalloc(sizeof(char*) * 5)))
-			wrong(1, db);
+		if (!(db[i] = (char**)ft_memalloc(sizeof(char*) * 5)))
+			wrong(1, db1);
 		for (int j = 0; j < 5; j++)
 		{
-			if (!(db.db[i][j] = (char*)ft_memalloc(sizeof(char) * 30)))
-				wrong(1, db);
+			if (!(db[i][j] = (char*)ft_memalloc(sizeof(char) * 30)))
+				wrong(1, db1);
 		}
 	}
-	db.table = 0;
-	db.rflag = 0;
 	return (db);
 }
 

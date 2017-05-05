@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 15:59:59 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/05 12:12:35 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/05 14:11:43 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ typedef struct	s_database
 void            db_write(t_database db, FILE *fp);
 void			db_save(FILE *fp, t_database db);
 void			wrong(int error, t_database db);
-t_database		init_alloc(void);
+char			***init_alloc(t_database db);
 void			db_store(t_database db);
 t_database		info(t_database db);
 t_database		readin(t_database db, FILE *fp);

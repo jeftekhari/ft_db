@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 15:59:42 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/05 12:44:41 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/05 14:14:56 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,9 @@ int main()
 	t_database	db;
 	FILE		*fp = NULL;
 
-	db = init_alloc();
+	db.table = 0;
+	db.rflag = 0;
+	db.db = init_alloc(db);
 	while(1)
 	{
 		db = format(db, fp);
