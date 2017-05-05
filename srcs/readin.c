@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 16:50:28 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/04 20:17:51 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/04 20:36:43 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int readin(t_database db, FILE *fp)
 	int		b = 1;
 	size_t	len = 100000;
 
+	printf("Read In:");
 	if (!(line = (char*)ft_memalloc(sizeof(char))))
 		wrong(1, db);
 	if (!(fp = fopen("knurkle.csv", "rb")))
@@ -33,5 +34,6 @@ int readin(t_database db, FILE *fp)
 		db.table++;
 	}
 	db.rflag = 1;
+	printf("%s Complete!\n%s", KGRN, KWHT);
     return (0);
 }
