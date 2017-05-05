@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 16:01:06 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/04 19:50:13 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/04 19:56:42 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,12 @@ char	*search_ask(t_database db)
 		scanf("%s", str);
 		return(strdup(str));
 	}
-	return (0);
+//	if (strstr("OTHER", str) || strstr("Other", str) || strstr("other", str))
+//		db.type = 5;
+//		printf("Enter other");
+//		scanf("%s", str);
+//		return(strdup(str));
+		return (0);
 }
 
 /* Used on entry creation. User enters in key information into struct variables */
