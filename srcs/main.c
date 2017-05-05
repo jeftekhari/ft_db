@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 15:59:42 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/05 14:28:01 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/05 14:33:42 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ t_database	format(t_database db, FILE *fp)
 		else
 			wrong(5, db);
 	}
+	if (strstr("Delete", str) || strstr("delete", str) || strstr("DELETE", str))
+		db_delete(db, fp);
 	return (db);
 }
 

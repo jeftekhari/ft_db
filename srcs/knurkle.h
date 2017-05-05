@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 15:59:59 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/05 14:11:43 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/05 14:33:29 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,6 @@ char			*search_ask(t_database *db);
 int				search(t_database db);
 t_database		format(t_database, FILE *fp);
 t_database		loop(t_database);
+t_database		db_delete(t_database db, FILE *fp);
 //int				db_store(t_database db, FILE *fp);
 # endif
