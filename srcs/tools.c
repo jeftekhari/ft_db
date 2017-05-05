@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 16:01:06 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/04 20:21:04 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/05 11:28:43 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,27 +27,29 @@ char	*search_ask(t_database *db)
 		scanf("%s", str);
 		return(strdup(str));
 	}
-	 if (strstr("NAME", str) || strstr("Name", str) || strstr("name", str))
-	 {
+	else if(strstr("NAME", str) || strstr("Name", str) || strstr("name", str))
+	{
 		db->type = 1;
 		printf("Enter Name:\n");
 		scanf("%s", str);
 		return(strdup(str));
-	 }
-	if (strstr("COLOR", str) || strstr("Color", str) || strstr("color", str))
+	}
+	else if (strstr("COLOR", str) || strstr("Color", str) || strstr("color", str))
 	{
 		db->type = 2;
 		printf("Enter Color:\n");
 		scanf("%s", str);
 		return(strdup(str));
 	}
-	if (strstr("GENDER", str) || strstr("Gender", str) || strstr("gender", str))
+	else if (strstr("GENDER", str) || strstr("Gender", str) || strstr("gender", str))
 	{
 		db->type = 3;
 		printf("Enter Gender:\n");
 		scanf("%s", str);
 		return(strdup(str));
 	}
+	else
+		wrong(6, *db);
 //	if (strstr("OTHER", str) || strstr("Other", str) || strstr("other", str))
 //		db.type = 5;
 //		printf("Enter other");
@@ -124,5 +126,7 @@ void	wrong(int error, t_database db)
 		ft_putstr("Bad Realloc\n");
 	if (error == 5)
 		ft_putstr("No data stored, please read in file.\n");
+	if (error == 6)
+		ft_putstr("Bad Input.\n");
 	shutdown(0, db);
 }

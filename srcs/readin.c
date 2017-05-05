@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 16:50:28 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/04 20:39:45 by ssalaues         ###   ########.fr       */
+/*   Updated: 2017/05/05 11:34:45 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ t_database	readin(t_database db, FILE *fp)
 		db.table++;
 	}
 	db.rflag = 1;
-	printf("%s Complete!\n%s", KGRN, KWHT);
+	printf(KGRN "Complete!\n" RESET);
     return (db);
 }
