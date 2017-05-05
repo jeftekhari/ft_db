@@ -6,7 +6,7 @@ NAME = ft_db
 
 HEADERS = knurkle.h
 
-OBJECTS = main.o writeout.o tools.o readin.o
+OBJECTS = main.o writeout.o tools.o readin.o search.o
 
 CFLAGS = -Wall -Werror -Wextra -g
 

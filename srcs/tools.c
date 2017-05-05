@@ -6,14 +6,14 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 16:01:06 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/04 19:34:49 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/04 19:50:13 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "knurkle.h"
 
 
-char	*search_ask(t_database *db)
+char	*search_ask(t_database db)
 {
 	char str[25];
 
@@ -25,28 +25,28 @@ char	*search_ask(t_database *db)
 		db.type = 1;
 		printf("Enter IDN");
 		scanf("%s", str);
-		return(str);
+		return(strdup(str));
 	}
 	 if (strstr("NAME", str) || strstr("Name", str) || strstr("name", str))
 	 {
 		db.type = 2;
 		printf("Enter Name");
 		scanf("%s", str);
-		return(str);
+		return(strdup(str));
 	 }
 	if (strstr("COLOR", str) || strstr("Color", str) || strstr("color", str))
 	{
 		db.type = 3;
 		printf("Enter Color");
 		scanf("%s", str);
-		return(str);
+		return(strdup(str));
 	}
 	if (strstr("GENDER", str) || strstr("Gender", str) || strstr("gender", str))
 	{
 		db.type = 4;
 		printf("Enter Gender");
 		scanf("%s", str);
-		return(str);
+		return(strdup(str));
 	}
 	return (0);
 }
