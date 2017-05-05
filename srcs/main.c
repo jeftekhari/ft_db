@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 15:59:42 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/05 14:14:56 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/05 14:28:01 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ t_database	format(t_database db, FILE *fp)
 	for (int i = 0; i < 25; i++)
 		printf("\n");
 	printf(BOLDWHITE "Hello! What can I do for you? 'Read/Write/Search/Exit'\n" RESET);
-	for (int i = 0; i < 25; i++)
-		printf("\n");
 	scanf("%s", str);
 	if (strstr("exit", str) || strstr("Exit", str))
 	{
