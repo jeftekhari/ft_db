@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 16:01:06 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/05 20:02:52 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/05 20:14:33 by ssalaues         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ char	***init_alloc(t_database db1)
 {
 	char	***db;
 
-	if (!(db = (char***)ft_memalloc(sizeof(char**) * 100)))
+	if (!(db = (char***)ft_memalloc(sizeof(char**) * 100000)))
 		wrong(1, db1);
 	for (int i = 0; i < 100; i++)
 	{
