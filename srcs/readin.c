@@ -6,16 +6,17 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 16:50:28 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/05 14:35:19 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/05 17:07:47 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "knurkle.h"
 
-char	***db_rewrite(t_database db, FILE *fp, int i)
+char	***db_rewrite(t_database db, FILE *fp)
 {
 	char	***db1;
 	int		j;
+	int		i;
 
 	db1 = init_alloc(db);
 //	ft_memdel(db.db[i]);
@@ -31,7 +32,18 @@ char	***db_rewrite(t_database db, FILE *fp, int i)
 			while(db.db[i][j])
 			{
 				db1[i][j] = db.db[i][j];
+				fprintf(fp, "%s", db1[i][j]);
 				j++;
+				db1[i][j] = db.db[i][j];
+				fprintf(fp, "%s", db1[i][j]);
+				j++;
+				db1[i][j] = db.db[i][j];
+				fprintf(fp, "%s", db1[i][j]);
+				j++;
+				db1[i][j] = db.db[i][j];
+				fprintf(fp, "%s", db1[i][j]);
+				j++;
+				db1[i][j] = NULL;
 			}
 			i++;
 		}
@@ -45,20 +57,34 @@ t_database	db_delete(t_database db, FILE *fp)
 	char	*s;
 	char	str[25];
 	int		i = 0;
+	int		j = 0;
 
 	s = search_ask(&db);
 	printf("Are you sure you want to Delete?\n");
 	printf("This action %s CANNOT %s be undone\n", KRED, RESET);
 	printf("Y/N\n");
 	scanf("%s", str);
-	if (strstr("Y", str))
+	if (strstr("Y", str) || strstr("y", str))
 	{
 		while (db.db[i])
 		{
 			if (strstr(db.db[i][db.type], s))
-				db.db = db_rewrite(db, fp, i);
+			{
+				j = 0;
+				ft_strclr(db.db[i][j++]);
+				ft_strclr(db.db[i][j++]);
+				ft_strclr(db.db[i][j++]);
+				ft_strclr(db.db[i][j++]);
+				j = i;
+				while (db.db[j])
+				{
+					db.db[j] = db.db[j + 1];
+					j++;
+				}
+			}
 			i++;
 		}
+		db.db = db_rewrite(db, fp);
 	}
 	return (db);
 }
