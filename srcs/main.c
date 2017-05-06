@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 15:59:42 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/05 18:34:40 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/05 18:54:35 by ssalaues         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,35 @@ t_database	loop(t_database db)
 
 	printf("\nAnything Else? (Y/N):\n");
 	scanf("%s", str);
-	if (strstr("N", str))
+	if (strstr("N", str) || strstr("n", str))
 	{
 		printf("Bye!\n");
 		exit(0);
 	}
-	else if (strstr("Y", str) || strstr("y", str))
-		printf("Okay! Look Down!");
 	else	
 		printf(KRED "BAD INPUT" RESET);
 	return (db);
 }
 
+void	logo()
+{
+	char	c;
+	FILE 	*logo;
+
+	putchar('\n');
+	if ((logo = fopen("logo", "r")))
+	{
+		while ((c = getc(logo)) != EOF)
+			putchar(c);
+	}
+	putchar('\n');
+	putchar('\n');
+	fclose(logo);
+}
 t_database	format(t_database db, FILE *fp)
 {
 	char		str[25];
-
-	for (int i = 0; i < 25; i++)
-		printf("\n");
+	
 	printf(BOLDWHITE "Hello! What can I do for you? (Read/Write/Search/Exit/Delete)\n" RESET);
 	scanf("%s", str);
 	if (strstr("exit", str) || strstr("Exit", str))
@@ -63,8 +74,6 @@ t_database	format(t_database db, FILE *fp)
 	return (db);
 }
 
-
-
 int main()
 {
 	t_database	db;
@@ -75,6 +84,7 @@ int main()
 	db.db = init_alloc(db);
 	while(1)
 	{
+		logo();
 		db = format(db, fp);
 		db = loop(db);
 	}
