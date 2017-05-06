@@ -6,7 +6,7 @@
 /*   By: ssalaues <ssalaues@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 16:18:27 by ssalaues          #+#    #+#             */
-/*   Updated: 2017/05/05 19:04:43 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/05 19:45:53 by ssalaues         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int		search(t_database db)
 	return (0);
 }
 
-t_database	db_update(t_database db)
+t_database	db_update(t_database db, FILE *fp)
 {
 	int		i;
 	char 	*s1;
@@ -77,13 +77,14 @@ t_database	db_update(t_database db)
 		if (strstr(db.db[i][0], s1))
 		{
 			if (db.type == 0)
-				db.db[i][db.type] = s2;
+				db.db[i][db.type] = ft_strjoin(s2, ",");
 			if (db.type == 1)
-				db.db[i][db.type] = s2;
+				db.db[i][db.type] = ft_strjoin(s2, ",");
 			if (db.type == 2)
-				db.db[i][db.type] = s2;
+				db.db[i][db.type] = ft_strjoin(s2, ",");
 			if (db.type == 3)
-				db.db[i][db.type] = s2;
+				db.db[i][db.type] = ft_strjoin(s2, ",");
+			db_rewrite(db, fp); 
 			free(s1);
 			return (db);
 		}

@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 15:59:42 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/05 19:26:21 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/05 19:41:15 by ssalaues         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ t_database	format(t_database db, FILE *fp)
 	else if (strstr("Update", str) || strstr("update", str) || strstr("UPDATE", str))
 	{
 		if (db.rflag == 1)
-			db = db_update(db);
+			db = db_update(db, fp);
 		else
 			wrong(5, db);
 	}
