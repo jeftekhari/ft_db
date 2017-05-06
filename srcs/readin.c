@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 16:50:28 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/05 17:17:39 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/05 17:34:26 by ssalaues         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ t_database	db_delete(t_database db, FILE *fp)
 	int		i = 0;
 	int		j = 0;
 
-	s = search_ask(&db);
+	s = search_ask(&db, "delete");
 	printf("Are you sure you want to Delete?\n");
 	printf("This action %s CANNOT %s be undone\n", KRED, RESET);
 	printf("Y/N\n");

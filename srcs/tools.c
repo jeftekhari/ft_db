@@ -6,19 +6,19 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 16:01:06 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/05 17:17:08 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/05 17:23:50 by ssalaues         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "knurkle.h"
 
 
-char	*search_ask(t_database *db)
+char	*search_ask(t_database *db, char *s)
 {
 	char str[25];
 
 	db->type = 0;
-	printf("How do you want to search?\n(IDN, Name, Color, Gender)\n");
+	printf("What do you want to %s?\n(IDN, Name, Color, Gender)\n", s);
 	scanf("%s", str);
 	if (strstr("IDN", str) || strstr("Idn", str) || strstr("idn", str))
 	{
