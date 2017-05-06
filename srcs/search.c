@@ -6,11 +6,30 @@
 /*   By: ssalaues <ssalaues@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 16:18:27 by ssalaues          #+#    #+#             */
-/*   Updated: 2017/05/05 18:25:53 by ssalaues         ###   ########.fr       */
+/*   Updated: 2017/05/05 19:04:43 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "knurkle.h"
+
+int		data_check(t_database db)
+{
+	int i = 0;
+
+	ft_putstr("Checking for Data.");
+	sleep(1);
+	ft_putstr(".");
+	sleep(1);
+	ft_putstr(".\n");
+	if(db.db[i])
+	{
+		printf("Data is present!\n");
+		sleep(1);
+		return (1);
+	}
+	printf("No Data Stored, try *Reading* or *Writing* some data, you dummy!\n");
+	return(0);
+}
 
 int		db_print(t_database db, int i)
 {
@@ -27,16 +46,13 @@ int		search(t_database db)
 	int		i = 0;
 	char	*s;
 
+	if (data_check(db) == 0)
+		return (0);
 	s = search_ask(&db, "search");
 	while (db.db[i])
 	{
-//		while (db.db[i][db.type])
-//		{
 		if (strstr(db.db[i][db.type], s))
 			db_print(db, i);
-//		db.type++;
-//		}
-//		db.type = 0;
 		i++;
 	}
 	ft_putstr("\nSearch complete\n");
@@ -49,6 +65,8 @@ t_database	db_update(t_database db)
 	char 	*s1;
 	char	*s2;
 
+	if (data_check(db) == 0)
+		return (db);
 	i = 0;
 	s1 = ft_strnew(30);
 	printf("Enter IDN you want to update:\n");

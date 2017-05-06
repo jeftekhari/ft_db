@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 16:50:28 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/05 18:32:11 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/05 19:11:30 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ t_database	db_delete(t_database db, FILE *fp)
 	int		i = 0;
 	int		j = 0;
 
+	if (data_check(db) == 0)
+		return (db);
 	s = search_ask(&db, "delete");
 	printf("Are you sure you want to Delete?\n");
 	printf("This action %s CANNOT %s be undone.\n", KRED, RESET);
@@ -94,7 +96,7 @@ t_database	readin(t_database db, FILE *fp)
 	int		b = 1;
 	size_t	len = 100000;
 
-	printf("Read In:");
+	ft_putstr("Read In:");
 	if (!(line = (char*)ft_memalloc(sizeof(char))))
 		wrong(1, db);
 	if (!(fp = fopen("knurkle.csv", "rb")))
@@ -111,6 +113,8 @@ t_database	readin(t_database db, FILE *fp)
 	}
 	db.rflag = 1;
 	db.table++;
+	sleep(2);
 	printf(KGRN "Complete!\n" RESET);
+	sleep(1);
     return (db);
 }

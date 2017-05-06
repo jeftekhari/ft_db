@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 15:59:42 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/05 18:54:35 by ssalaues         ###   ########.fr       */
+/*   Updated: 2017/05/05 19:08:18 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,19 @@ t_database	format(t_database db, FILE *fp)
 			wrong(5, db);
 	}
 	else if (strstr("Delete", str) || strstr("delete", str) || strstr("DELETE", str))
-		db_delete(db, fp);
+	{
+		if (db.rflag == 1)
+			db_delete(db, fp);
+		else
+			wrong(5, db);
+	}
 	else if (strstr("Update", str) || strstr("update", str) || strstr("UPDATE", str))
-		db = db_update(db);
+	{
+		if (db.rflag == 1)
+			db = db_update(db);
+		else
+			wrong(5, db);
+	}
 	else
 		printf(KRED "BAD INPUT" RESET);
 	return (db);
