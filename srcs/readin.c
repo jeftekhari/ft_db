@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 16:50:28 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/05 19:11:30 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/05 19:58:22 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	***db_rewrite(t_database db, FILE *fp)
 		{
 			j = 0;
 			db1[i] = db.db[i];
-			while(db.db[i][j])
+			while (db.db[i][j])
 			{
 				db1[i][j] = db.db[i][j];
 				fprintf(fp, "%s", db1[i][j]);
@@ -106,7 +106,7 @@ t_database	readin(t_database db, FILE *fp)
 		db.row = 0;
 		while (db.row <= 3)
 		{
-			b = getdelim(&line , &len, ',', fp);
+			b = getdelim(&line, &len, ',', fp);
 			db.db[db.table][db.row++] = strdup(line);
 		}
 		db.table++;
@@ -116,5 +116,5 @@ t_database	readin(t_database db, FILE *fp)
 	sleep(2);
 	printf(KGRN "Complete!\n" RESET);
 	sleep(1);
-    return (db);
+	return (db);
 }

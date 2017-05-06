@@ -6,12 +6,11 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 16:01:06 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/05 17:23:50 by ssalaues         ###   ########.fr       */
+/*   Updated: 2017/05/05 20:02:52 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "knurkle.h"
-
 
 char	*search_ask(t_database *db, char *s)
 {
@@ -25,28 +24,28 @@ char	*search_ask(t_database *db, char *s)
 		db->type = 0;
 		printf("Enter IDN:\n");
 		scanf("%s", str);
-		return(strdup(str));
+		return (strdup(str));
 	}
-	else if(strstr("NAME", str) || strstr("Name", str) || strstr("name", str))
+	else if (strstr("NAME", str) || strstr("Name", str) || strstr("name", str))
 	{
 		db->type = 1;
 		printf("Enter Name:\n");
 		scanf("%s", str);
-		return(strdup(str));
+		return (strdup(str));
 	}
 	else if (strstr("COLOR", str) || strstr("Color", str) || strstr("color", str))
 	{
 		db->type = 2;
 		printf("Enter Color:\n");
 		scanf("%s", str);
-		return(strdup(str));
+		return (strdup(str));
 	}
 	else if (strstr("GENDER", str) || strstr("Gender", str) || strstr("gender", str))
 	{
 		db->type = 3;
 		printf("Enter Gender:\n");
 		scanf("%s", str);
-		return(strdup(str));
+		return (strdup(str));
 	}
 	else
 		wrong(6, *db);
@@ -68,10 +67,10 @@ t_database	info(t_database db)
 }
 
 /* Stores data into 3d array, use db.table to move throughout*/
-void	db_store( t_database db)
+void	db_store(t_database db)
 {
 	int		j = 0;
-	
+
 	db.db[db.table][j++] = strdup(db.idn);
 	db.db[db.table][j++] = strdup(db.name);
 	db.db[db.table][j++] = strdup(db.color);
