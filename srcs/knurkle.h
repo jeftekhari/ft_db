@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 15:59:59 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/05 18:57:12 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/05 19:41:02 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ t_database		format(t_database, FILE *fp);
 t_database		loop(t_database);
 t_database		db_delete(t_database db, FILE *fp);
 char			***db_rewrite(t_database db, FILE *fp);
-t_database		db_update(t_database db);
+t_database		db_update(t_database db, FILE *fp);
 int				data_check(t_database db);
 
 # endif
