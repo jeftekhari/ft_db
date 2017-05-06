@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 15:59:59 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/05 15:08:54 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/05 17:19:46 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,6 @@
 # include	<math.h>
 # include	"../libs/libft/libft.h"
 
-/*
- *
- *
- *
- *
- * ROOM FOR PROTOTYPES AND STRUCTS
- * */
 #define RESET   "\033[0m"
 #define KNRM  "\x1B[0m"
 #define KRED  "\x1B[31m"
@@ -68,5 +61,6 @@ t_database		format(t_database, FILE *fp);
 t_database		loop(t_database);
 t_database		db_delete(t_database db, FILE *fp);
 char			***db_rewrite(t_database db, FILE *fp);
-//int				db_store(t_database db, FILE *fp);
+int				db_update(t_database db);
+
 # endif

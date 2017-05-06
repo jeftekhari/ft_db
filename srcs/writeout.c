@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 16:00:28 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/05 12:39:11 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/05 17:17:29 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void	db_write(t_database db, FILE *fp)
 	db = info(db);
 	if (!(fp = fopen("knurkle.csv", "a")))
 		wrong(3, db);
-//	fp = fopen("knurkle.csv", "a");
 	db_store(db);
 	db_save(fp, db);
 	db.table++;
