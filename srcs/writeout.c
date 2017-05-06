@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   writeout.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
+/*   By: jeftekha <jeftekha@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 16:00:28 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/05 20:04:13 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/05 23:08:52 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 /* Prints Entry to File */
 void	db_save(FILE *fp, t_database db)
 {
-	int		i = 0;
-	int		j = 0;
+	int		i;
+	int		j;
 
+	i = 0;
+	j = 0;
 	while (db.db[i][j])
 	{
 		fprintf(fp, "%s,", db.idn);
