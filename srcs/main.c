@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 15:59:42 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/05 19:08:18 by jeftekha         ###   ########.fr       */
+/*   Updated: 2017/05/05 19:24:33 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ t_database	loop(t_database db)
 		printf("Bye!\n");
 		exit(0);
 	}
+	else if (strstr("Y", str) || strstr("y", str))
+		return (db);
 	else	
 		printf(KRED "BAD INPUT" RESET);
 	return (db);
