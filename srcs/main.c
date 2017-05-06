@@ -6,7 +6,7 @@
 /*   By: jeftekha <jeftekha@student.42.us.org       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/04 15:59:42 by jeftekha          #+#    #+#             */
-/*   Updated: 2017/05/05 17:32:53 by ssalaues         ###   ########.fr       */
+/*   Updated: 2017/05/05 18:34:40 by jeftekha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,10 @@ t_database	loop(t_database db)
 		printf("Bye!\n");
 		exit(0);
 	}
-//	if (strstr("Y", str) || strstr("y", str))
-//		db.table++;
+	else if (strstr("Y", str) || strstr("y", str))
+		printf("Okay! Look Down!");
+	else	
+		printf(KRED "BAD INPUT" RESET);
 	return (db);
 }
 
@@ -41,21 +43,23 @@ t_database	format(t_database db, FILE *fp)
 		printf("So Long Mutha Fucka!\n");
 		exit(0) ;
 	}
-	if (strstr("Write", str) || strstr("write", str))
+	else if (strstr("Write", str) || strstr("write", str))
 		db_write(db, fp);
-	if (strstr("Read", str) || strstr("read", str))
+	else if (strstr("Read", str) || strstr("read", str))
 		db = readin(db, fp);
-	if (strstr("Search", str) || strstr("search", str))
+	else if (strstr("Search", str) || strstr("search", str))
 	{
 		if (db.rflag == 1)
 			search(db);
 		else
 			wrong(5, db);
 	}
-	if (strstr("Delete", str) || strstr("delete", str) || strstr("DELETE", str))
+	else if (strstr("Delete", str) || strstr("delete", str) || strstr("DELETE", str))
 		db_delete(db, fp);
-	if (strstr("Update", str) || strstr("update", str) || strstr("UPDATE", str))
+	else if (strstr("Update", str) || strstr("update", str) || strstr("UPDATE", str))
 		db = db_update(db);
+	else
+		printf(KRED "BAD INPUT" RESET);
 	return (db);
 }
 
